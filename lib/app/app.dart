@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:musica/presentation/page/home.dart';
 import 'package:musica/presentation/page/login_page.dart';
+import 'package:musica/presentation/page/track_list_page.dart';
 
 class Application extends StatelessWidget {
   const Application({super.key});
@@ -16,6 +17,7 @@ class Application extends StatelessWidget {
       routes: {
         "/":(context) => const LoginPage(),
         "/home": (context) => const HomePage(),
+        "/track-list": (context) => const TrackListPage()
       },
     );
   }

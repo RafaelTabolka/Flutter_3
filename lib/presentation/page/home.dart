@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:musica/data/album_repository.dart';
+import 'package:musica/presentation/widget/album_carrousel.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -10,13 +12,15 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    final albuns = loadAlbuns();
+    
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home"),
+        title: const Text("Home"),
       ),
-      body: const Column(
+      body: Column(
         children: [
-          Text("Home"),
+          AlbumCarrousel(albuns: albuns),
         ],
       ),
     );
