@@ -32,12 +32,22 @@ class AlbumCarrousel extends StatelessWidget {
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: albuns.length,
-                itemBuilder: (context, index) => DisplayAlbum(
-                  album: albuns[index])),
+                itemBuilder: (context, index) => GestureDetector(
+                  onTap: () => navigationToTrackList(context, albuns[index]),
+                  child: DisplayAlbum(
+                    album: albuns[index]),
+                )),
             ),
           ],
         ),
       ) ,
     );
+  }
+
+  void navigationToTrackList (BuildContext context, Album album) {
+    Navigator.pushNamed(
+      context,
+      "/track-list",
+      arguments: album);
   }
 }
